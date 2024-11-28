@@ -64,7 +64,7 @@ async with TranslationClient("http://localhost:8000") as client:
     # Wait for completion with progress updates
     final_status = await client.wait_for_completion(
         timeout=video_length * 2,
-        progress_callback=lambda response: print(response['result'])
+        progress_callback=progress_callback
     )
 ```
 
